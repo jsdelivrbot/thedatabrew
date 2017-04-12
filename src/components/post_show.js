@@ -23,11 +23,17 @@ class PostShow extends Component {
             this.props.fetchAsset(this.props.post.fields.image.sys.id);
             return <div>Loading</div>;
         }
-
+        const style = {
+            backgroundImage: `url(${this.props.asset.fields.file.url})`
+        };
+        console.log(style);
         return (
             <div>
-                <h1>{this.props.post.fields.title}</h1>
-                <img src={"https:" + this.props.asset.fields.file.url} />
+                <h2>{this.props.post.fields.title}</h2>
+                <div style={style} className="postImage">
+
+                </div>
+                {/* <img src={"https:" + this.props.asset.fields.file.url} /> */}
                 <div>
                     <span dangerouslySetInnerHTML={this.rawMarkup()} />
                 </div>

@@ -27,14 +27,13 @@ class PostsIndex extends Component {
                 <div>Loading</div>
             );
         }
-        console.log(this.props.all);
         // once posts returned from API show posts
         return (
             <div className="previewPosts">
                 <div className="majorPostsColumn">
                     {this.props.all.map(post => {
-                        // if big post
-                        if(post.fields.majorPost && majorPosts < 2) {
+                        // if big post && the amount of big posts is smaller than the whole number of posts / 3
+                        if(post.fields.majorPost && majorPosts < Math.ceil(this.props.all.length/3)) {
                             // the post's background image needs to be returned from the assets
                             const style = {
                                 backgroundImage: `url(${this.findImageLink(post.fields.image.sys.id)})`
@@ -50,7 +49,7 @@ class PostsIndex extends Component {
                 <div className="smallPostsColumn">
                     {this.props.all.map(post => {
                         // if big post
-                        if(post.fields.majorPost && otherMajorPosts < 2) {
+                        if(post.fields.majorPost && otherMajorPosts < Math.ceil(this.props.all.length/3)) {
                             otherMajorPosts++;
                             return;
                             // otherwise normal/small post
