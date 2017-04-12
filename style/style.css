@@ -1,5 +1,4 @@
 
-
 .body {
     background-color: #525050;
     color: white;
@@ -47,8 +46,8 @@
 }
 
 .postPreviewHeadline {
-    padding-left: 20%;
-
+    padding-left: 10%;
+    color: black;
 }
 
 .header {
@@ -70,6 +69,16 @@
     color: white;
 }
 
+.headerHeading {
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.headerHeading:hover {
+    text-decoration: none;
+    color: white;
+}
 
 .link:hover {
     text-decoration: none;
@@ -81,4 +90,23 @@
     background-repeat:no-repeat;
     background-position: center center;
     background-size: 100%;
+}
+
+.whiteBar {
+    margin-top: 20px;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+}
+
+.postText {
+    padding-top: 50px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.singlePostHeading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
 }

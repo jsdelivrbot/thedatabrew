@@ -14,6 +14,11 @@ class PostShow extends Component {
         return { __html: rawMarkup };
     }
 
+    prepareGist() {
+        return { __html: this.props.post.fields.code};
+    }
+
+
     render() {
         if(!this.props.post) {
             return <div>Loading</div>;
@@ -26,16 +31,15 @@ class PostShow extends Component {
         const style = {
             backgroundImage: `url(${this.props.asset.fields.file.url})`
         };
-        console.log(style);
         return (
             <div>
-                <h2>{this.props.post.fields.title}</h2>
-                <div style={style} className="postImage">
-
-                </div>
-                {/* <img src={"https:" + this.props.asset.fields.file.url} /> */}
-                <div>
+                <h2 className="singlePostHeading">{this.props.post.fields.title}</h2>
+                <div style={style} className="postImage"></div>
+                <div className="postText">
                     <span dangerouslySetInnerHTML={this.rawMarkup()} />
+                </div>
+                <div className="">
+                    <div dangerouslySetInnerHTML={this.prepareGist()} ></div>
                 </div>
             </div>
         );
