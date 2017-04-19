@@ -27,6 +27,7 @@ class PostsIndex extends Component {
                 <div>Loading</div>
             );
         }
+        console.log(this.props.all);
         // once posts returned from API show posts
         return (
             <div className="previewPosts">

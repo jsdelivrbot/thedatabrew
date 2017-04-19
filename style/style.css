@@ -110,3 +110,9 @@
     margin-bottom: 20px;
     font-size: 40px;
 }
+
+.showCodeButton {
+    background-color: inherit;
+    border: 1px solid white;
+    radius: 2px;
+}
