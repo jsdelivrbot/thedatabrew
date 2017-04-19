@@ -9,6 +9,10 @@ class PageShow extends Component {
         this.props.fetchPage(this.props.params.title);
     }
 
+    componentWillReceiveProps() {
+        this.props.fetchPage(this.props.params.title);
+    }
+
     rawMarkup() {
         let rawMarkup = marked(this.props.page.items[0].fields.content, {sanitize: true});
         return { __html: rawMarkup };
