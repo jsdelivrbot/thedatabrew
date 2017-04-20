@@ -1,6 +1,7 @@
 /node_modules
 bundle.js
 npm-debug.log
+passwords.json
 
 .DS_Store
 # IntelliJ

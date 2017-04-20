@@ -1,4 +1,5 @@
 import axios from 'axios';
+import passwords from '../../passwords.json'
 
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_ASSETS = 'FETCH_ASSETS';
@@ -7,8 +8,8 @@ export const FETCH_ASSET = 'FETCH_ASSET';
 export const FETCH_PAGE = 'FETCH_PAGE';
 
 const baseUrl = 'https://cdn.contentful.com';
-const space = '54wk32cywqds';
-const accessToken = '28216c88b188c36ac4d70c22080bc39c40b7210d6ace5a6da93d29374dc0be3b';
+const space = passwords.space;
+const accessToken = passwords.accessToken;
 const blogPosts = 'post';
 const page = 'page';
 
