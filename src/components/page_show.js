@@ -5,12 +5,25 @@ import marked from 'marked';
 
 
 class PageShow extends Component {
-    componentWillMount() {
-        this.props.fetchPage(this.props.params.title);
+    constructor(props) {
+        super(props);
+        this.state = { page: null };
     }
 
-    componentWillReceiveProps() {
+    componentWillMount() {
         this.props.fetchPage(this.props.params.title);
+        this.setState({ page: this.props.params.title });
+    }
+
+    // if react router updates, new content needs to be loaded from API, however every time new content will call this function in a loop, therefore setting state is needed to stop a continous loop
+    componentWillReceiveProps(nextProps) {
+        if(this.state.page == nextProps.params.title) return;
+        
+        this.props.fetchPage(this.props.params.title);
+
+        if(nextProps.params.title == this.props.params.title) {
+            this.setState({ page: this.props.params.title});
+        }
     }
 
     rawMarkup() {

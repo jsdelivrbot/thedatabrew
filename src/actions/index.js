@@ -7,8 +7,8 @@ export const FETCH_ASSET = 'FETCH_ASSET';
 export const FETCH_PAGE = 'FETCH_PAGE';
 
 const baseUrl = 'https://cdn.contentful.com';
-const space = 'pz36b4syjpn6';
-const accessToken = 'd0b7b36ec3115ffd1b36c76e8ab479fe17df6305bd24baa967fe1c758884bb0a';
+const space = '54wk32cywqds';
+const accessToken = '28216c88b188c36ac4d70c22080bc39c40b7210d6ace5a6da93d29374dc0be3b';
 const blogPosts = 'post';
 const page = 'page';
 
